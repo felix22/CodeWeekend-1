@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codeweekend</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header class="mynav">
+	<% if current_user %>
+	<ul>
+		<li><%= link_to "Profile", current_user %></li>
+		<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+		<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+	<% else %>
+		<li><%= link_to "Sign in", signin_path %></li>
+		<li><%= link_to "Sign up", signup_path %></li>
+	</ul>
+	<% end %>
+
+	</header>
+
+	<%= yield %>
+
+</body>
+</html>
