@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :admin_user, only: [:index]
+  before_action :correct_user,   only: [:show, :edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -70,5 +71,9 @@ class UsersController < ApplicationController
 
     def admin_user
       redirect_to(root_url) unless current_user.admin?
+    end
+
+    def correct_user
+      redirect_to(root_url) unless current_user
     end
 end
