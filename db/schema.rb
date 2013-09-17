@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130829122616) do
+ActiveRecord::Schema.define(version: 20130917154914) do
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 20130829122616) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
-    t.boolean  "paid",            default: false
-    t.boolean  "paid1",           default: false
-    t.boolean  "paid2",           default: false
-    t.boolean  "paid3",           default: false
-    t.boolean  "paid4",           default: false
+    t.boolean  "week1available",  default: false
+    t.boolean  "week2available",  default: false
+    t.boolean  "week3available",  default: false
+    t.boolean  "week4available",  default: false
+    t.boolean  "week5available",  default: false
+    t.boolean  "week6available",  default: false
+    t.boolean  "week7available",  default: false
   end
 
 end

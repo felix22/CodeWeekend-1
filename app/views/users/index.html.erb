@@ -8,11 +8,13 @@
           <th>Name</th>
           <th>Email</th>
           <th>Admin</th>
-          <th>Paid</th>
-          <th>Paid1</th>
-          <th>Paid2</th>
-          <th>Paid3</th>
-          <th>Paid4</th>
+          <th>Week1</th>
+          <th>Week2</th>
+          <th>Week3</th>
+          <th>Week4</th>
+          <th>Week5</th>
+          <th>Week6</th>
+          <th>Week7</th>
           <th></th>
           <th></th>
           <th></th>
@@ -25,11 +27,14 @@
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td><%= user.admin %></td>
-            <td><%= user.paid %></td>
-            <td><%= user.paid1 %></td>
-            <td><%= user.paid2 %></td>
-            <td><%= user.paid3 %></td>
-            <td><%= user.paid4 %></td>
+            <td><%= user.week1available %></td>
+            <td><%= user.week2available %></td>
+            <td><%= user.week3available %></td>
+            <td><%= user.week4available %></td>
+            <td><%= user.week5available %></td>
+            <td><%= user.week6available %></td>
+            <td><%= user.week7available %></td>
+            
             <td><%= link_to 'Show', user %></td>
             <td><%= link_to 'Edit', edit_user_path(user) %></td>
             <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

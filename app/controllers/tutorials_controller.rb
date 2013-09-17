@@ -1,8 +1,12 @@
 class TutorialsController < ApplicationController
-before_filter :paid1, only: [:tut1]
-before_filter :paid2, only: [:tut2]
-before_filter :paid3, only: [:tut3]
-before_filter :paid4, only: [:tut4]
+  
+  before_filter :week1available, only:[:tut1]
+  before_filter :week2available, only:[:tut2]
+  before_filter :week3available, only:[:tut3]
+  before_filter :week4available, only:[:tut4]
+  before_filter :week5available, only:[:tut5]
+  before_filter :week6available, only:[:tut6]
+  before_filter :week7available, only:[:tut7]
 
   def tut1
   end
@@ -16,31 +20,58 @@ before_filter :paid4, only: [:tut4]
   def tut4
   end
 
+  def tut5
+  end
+
+  def tut6
+  end
+
+  def tut7
+  end
+
   private
 
-  def paid
-  	unless current_user.paid
-    	redirect_to current_user, notice: "Please register for Codeweekend"
+  def week1available
+    unless current_user.week1available? 
+      redirect_to current_user, notice: "This week is not live yet"
     end 
   end
-  def paid1
-  	unless current_user.paid1? | current_user.paid?
-    	redirect_to current_user, notice: "Please register for Codeweekend"
+
+  def week2available
+    unless current_user.week2available? 
+      redirect_to current_user, notice: "This week is not live yet"
     end 
   end
-  def paid2
-  	unless current_user.paid2? | current_user.paid?
-    	redirect_to current_user, notice: "Please register for Codeweekend"
+
+  def week3available
+    unless current_user.week3available? 
+      redirect_to current_user, notice: "This week is not live yet"
     end 
   end
-  def paid3
-  	unless current_user.paid3? | current_user.paid?
-    	redirect_to current_user, notice: "Please register for Codeweekend"
+
+  def week4available
+    unless current_user.week4available? 
+      redirect_to current_user, notice: "This week is not live yet"
     end 
   end
-  def paid4
-  	unless current_user.paid4? | current_user.paid?
-    	redirect_to current_user, notice: "Please register for Apps on rails - Week1"
+
+  def week5available
+    unless current_user.week5available? 
+      redirect_to current_user, notice: "This week is not live yet"
     end 
   end
+
+  def week6available
+    unless current_user.week6available? 
+      redirect_to current_user, notice: "This week is not live yet"
+    end 
+  end
+
+   def week7available
+    unless current_user.week7available? 
+      redirect_to current_user, notice: "This week is not live yet"
+    end 
+  end
+
 end
+

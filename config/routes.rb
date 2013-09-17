@@ -1,9 +1,5 @@
 Codeweekend::Application.routes.draw do
-
-  get "tutorials/tut1"
-  get "tutorials/tut2"
-  get "tutorials/tut3"
-  get "tutorials/tut4"
+  
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'users#new'
@@ -14,6 +10,9 @@ Codeweekend::Application.routes.draw do
   match '/week2', :to => 'tutorials#tut2', via: 'get' 
   match '/week3', :to => 'tutorials#tut3', via: 'get' 
   match '/week4', :to => 'tutorials#tut4', via: 'get' 
+  match '/week5', :to => 'tutorials#tut5', via: 'get' 
+  match '/week6', :to => 'tutorials#tut6', via: 'get' 
+  match '/week7', :to => 'tutorials#tut7', via: 'get' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
